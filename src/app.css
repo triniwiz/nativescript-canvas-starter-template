@@ -1,0 +1,51 @@
+/*
+ * Theme and utilities only: MasonKit's `View.preflight` (src/app.ts) does the
+ * reset natively. Tailwind's CSS preflight must stay out; its
+ * `[hidden] { display: none }` matches every view (core defines `hidden` on
+ * all of them, defaulting to false), which hides the whole Mason tree.
+ */
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
+
+/*
+ * NativeScript puts platform, device and appearance classes on the root view
+ * (.ns-ios, .ns-android, .ns-windows, .ns-phone, .ns-tablet, .ns-dark, ...).
+ * These variants expose them to Tailwind: `dark:bg-slate-900`, `ios:pt-2`, ...
+ *
+ * `@media` based variants (sm:, md:, ...) are not available, so build
+ * responsive layouts from intrinsic sizing instead: flex-wrap + basis-*,
+ * grid-cols-[repeat(auto-fill,minmax(220,1fr))], w-full + max-w-*.
+ */
+@custom-variant dark (.ns-dark &);
+@custom-variant ios (.ns-ios &);
+@custom-variant android (.ns-android &);
+@custom-variant windows (.ns-windows &);
+@custom-variant phone (.ns-phone &);
+@custom-variant tablet (.ns-tablet &);
+
+Page {
+  background-color: var(--color-slate-50);
+}
+
+.ns-dark Page {
+  background-color: var(--color-slate-950);
+}
+
+/* Shared building blocks, composed from Tailwind utilities. */
+@utility card {
+  @apply rounded-3xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase text-indigo-500 dark:text-indigo-400;
+}
+
+@utility btn {
+  @apply rounded-2xl px-5 py-3 text-base font-semibold;
+}
+
+/* Tailwind's bg-linear-* emits `in oklab` interpolation, which native
+   gradient parsers don't understand, so spell the gradient out. */
+@utility bg-hero {
+  background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 55%, #d946ef 100%);
+}
