@@ -27,15 +27,16 @@ const demo = computed(() =>
 
 <template>
   <DemoPage
+    :fill="620"
     eyebrow="PixiJS"
     title="Sprite party"
     description="PixiJS v8 through @nativescript/canvas-pixi: textures generated from vector Graphics, a parallax starfield and a bunnymark of bouncing sprites. Tap the canvas for a burst."
   >
-    <section class="card flex flex-col gap-4">
+    <section class="card flex flex-1 flex-col gap-4">
       <CanvasView
         :key="backend"
         :demo="demo"
-        :height="480" class="w-full rounded-2xl"
+        class="min-h-[240] w-full flex-1 rounded-2xl"
         @started="critters = $event"
       >
         <div class="absolute left-3 top-3 flex flex-row flex-wrap gap-2">

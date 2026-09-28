@@ -38,12 +38,13 @@ const demo = shaderGallery({ shader: shader.value, onInfo: (value) => (info.valu
 
 <template>
   <DemoPage
+    :fill="760"
     eyebrow="WebGL"
     title="Fragment shaders"
     description="Raw WebGL 1: one full-screen triangle, a GLSL fragment shader, and time, resolution and pointer uniforms. Drag across the canvas to move the effect."
   >
-    <section class="card flex flex-col gap-4">
-      <CanvasView :demo="demo" :height="440" class="w-full rounded-2xl" @started="gallery = $event">
+    <section class="card flex flex-1 flex-col gap-4">
+      <CanvasView :demo="demo" class="min-h-[240] w-full flex-1 rounded-2xl" @started="gallery = $event">
         <div class="absolute bottom-3 left-3 flex flex-row gap-2">
           <span class="rounded-full bg-black/40 px-3 py-1 text-xs font-semibold text-white">
             getContext('webgl')

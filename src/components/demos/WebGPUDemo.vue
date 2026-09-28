@@ -48,15 +48,16 @@ function onStarted(instance: Boids) {
 
 <template>
   <DemoPage
+    :fill="760"
     eyebrow="WebGPU"
     title="Compute boids"
     description="Every frame a WGSL compute shader steers each boid from its neighbours, then an instanced render pass draws the flock. Touch the canvas to attract them."
   >
-    <section class="card flex flex-col gap-4">
+    <section class="card flex flex-1 flex-col gap-4">
       <CanvasView
         :key="count"
         :demo="demo"
-        :height="460" class="w-full rounded-2xl"
+        class="min-h-[240] w-full flex-1 rounded-2xl"
         @started="onStarted"
       >
         <div class="absolute left-3 top-3 flex flex-row gap-2">

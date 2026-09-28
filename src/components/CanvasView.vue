@@ -5,15 +5,15 @@ import { runDemo, type Demo, type DemoInstance } from '../canvas/runner';
 
 /**
  * A <Canvas> that runs a demo from src/canvas/demos, filling the width it is
- * given at `height` dp. The default slot is layered on top of the canvas, so
- * MasonKit content (badges, captions, controls) can sit over the drawing.
+ * given. With `height` (dp) it is that tall; without, it fills the height its
+ * box gets from classes (`flex-1`, `h-*`). The default slot is layered on top
+ * of the canvas, so MasonKit content (badges, captions, controls) can sit over
+ * the drawing.
  *
- * The height is a prop rather than a class for two reasons: the canvas sets
- * its own width/height as local style values, which outrank class rules, and
- * on Windows MasonKit sizes a core view like the canvas from its native size,
- * so a percentage height there comes out as 0.
+ * The size is set on the canvas as a style, not with classes: the canvas sets
+ * its own width/height as local style values, which outrank class rules.
  */
-const props = defineProps<{ demo: Demo<T>; height: number }>();
+const props = defineProps<{ demo: Demo<T>; height?: number }>();
 const emit = defineEmits<{ started: [instance: T] }>();
 
 const error = ref<string | null>(null);
@@ -22,6 +22,13 @@ let stop: (() => void) | null = null;
 function onLoaded(args: { object: Canvas }) {
   if (stop) {
     return;
+  }
+  if (!props.height) {
+    // @nativescript/canvas 3.0.0-alpha.16 doesn't pass a % size on to a parent that
+    // lays out its children itself (NativeScript/canvas#162), so hand it to MasonKit here.
+    const parent = args.object.parent as any;
+    parent?._setChildPercentSize?.(args.object, true, 1);
+    parent?._setChildPercentSize?.(args.object, false, 1);
   }
   stop = runDemo(
     args.object,
@@ -40,8 +47,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden" :style="{ height: props.height }">
-    <Canvas :style="{ width: '100%', height: props.height }" @loaded="onLoaded" />
+  <div class="relative overflow-hidden" :style="props.height ? { height: props.height } : undefined">
+    <Canvas :style="{ width: '100%', height: props.height ?? '100%' }" @loaded="onLoaded" />
     <slot />
     <div
       v-if="error"

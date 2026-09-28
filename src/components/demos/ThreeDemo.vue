@@ -35,12 +35,13 @@ renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);`;
 
 <template>
   <DemoPage
+    :fill="760"
     eyebrow="three.js"
     title="Galaxy"
     description="Unmodified three.js on @nativescript/canvas-three: a physically based torus knot lit by a PMREM room environment and orbiting point lights, circled by an InstancedMesh galaxy. Drag to orbit."
   >
-    <section class="card flex flex-col gap-4">
-      <CanvasView :demo="demo" :height="480" class="w-full rounded-2xl" @started="galaxy = $event">
+    <section class="card flex flex-1 flex-col gap-4">
+      <CanvasView :demo="demo" class="min-h-[240] w-full flex-1 rounded-2xl" @started="galaxy = $event">
         <div class="absolute right-3 top-3 flex flex-col items-end gap-2">
           <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white">
             {{ stats.fps }} fps

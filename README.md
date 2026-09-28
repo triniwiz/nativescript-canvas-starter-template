@@ -67,9 +67,12 @@ The home screen links to one page per renderer:
 ## Tips
 
 - **Sizing a canvas:** give `<Canvas>` its size with an inline `style`, not
-  classes, and use a fixed height. `CanvasView` does both through its
-  `height` prop. As on the web, `canvas.width` and `canvas.height` set the
-  backing store; `runDemo` sets them for you.
+  classes. `CanvasView` does this for you: pass `height` for a fixed height,
+  or leave it out and size its box with classes such as `flex-1`. The
+  single-canvas demos use `<DemoPage :fill="…">`, so the canvas takes the
+  window height left over and the page only scrolls in short windows. As on
+  the web, `canvas.width` and `canvas.height` set the backing store; `runDemo`
+  sets them for you.
 - **Opaque 2D canvases** (`getContext('2d', { alpha: false })`) are faster
   when you paint the whole frame anyway.
 - **Typings:** on Windows `getContext()` returns a union, so cast the result,
@@ -119,6 +122,9 @@ These can be removed once the fixes are released:
   ([#11466](https://github.com/NativeScript/NativeScript/pull/11466)). During
   HMR it also points PixiJS's dynamic imports at its ES modules instead of its
   CommonJS files, which would load a second copy of PixiJS.
+- `CanvasView` hands its canvas's `100%` size to MasonKit itself, because
+  canvas doesn't pass percentage sizes on yet
+  ([canvas#162](https://github.com/NativeScript/canvas/pull/162)).
 - `masonkit-hmr.mjs` stops MasonKit from loading twice during HMR.
 - `postcss-selector-commas.mjs` makes classes with a comma, like
   `grid-cols-[repeat(auto-fill,minmax(240,1fr))]`, match
