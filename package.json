@@ -26,7 +26,7 @@
     "@types/three": "~0.184.0",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
-    "nativescript": "9.1.2-dev.2026-09-24-36031892256",
+    "nativescript": "9.1.2-dev.2026-09-29-36527160420",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.11"
