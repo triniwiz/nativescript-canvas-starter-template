@@ -26,8 +26,12 @@ export function threeGalaxy(
     let { width, height } = size;
     const compact = options.compact ?? false;
 
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas as any, antialias: true });
-    renderer.setPixelRatio(size.scale);
+    // The fragment-heavy materials below cost per pixel: past 1.5× the extra
+    // pixels are hard to see on a phone and can halve the frame rate, and at that
+    // density edges hardly need MSAA.
+    const pixelRatio = Math.min(size.scale, 1.5);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas as any, antialias: pixelRatio < 1.5 });
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(width, height, false);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.1;
