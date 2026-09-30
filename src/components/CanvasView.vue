@@ -10,6 +10,11 @@ import { runDemo, type Demo, type DemoInstance } from '../canvas/runner';
  * of the canvas, so MasonKit content (badges, captions, controls) can sit over
  * the drawing.
  *
+ * The canvas sits in an absolutely positioned box, so like any out-of-flow
+ * content it adds nothing to its container's size. In flow, its backing store
+ * would be its intrinsic size (as on the web), and a flex item's automatic
+ * minimum height would grow with every resize the runner makes to match it.
+ *
  * The size is set on the canvas as a style, not with classes: the canvas sets
  * its own width/height as local style values, which outrank class rules.
  */
@@ -22,13 +27,6 @@ let stop: (() => void) | null = null;
 function onLoaded(args: { object: Canvas }) {
   if (stop) {
     return;
-  }
-  if (!props.height) {
-    // @nativescript/canvas 3.0.0-alpha.16 doesn't pass a % size on to a parent that
-    // lays out its children itself (NativeScript/canvas#162), so hand it to MasonKit here.
-    const parent = args.object.parent as any;
-    parent?._setChildPercentSize?.(args.object, true, 1);
-    parent?._setChildPercentSize?.(args.object, false, 1);
   }
   stop = runDemo(
     args.object,
@@ -48,7 +46,9 @@ onUnmounted(() => {
 
 <template>
   <div class="relative overflow-hidden" :style="props.height ? { height: props.height } : undefined">
-    <Canvas :style="{ width: '100%', height: props.height ?? '100%' }" @loaded="onLoaded" />
+    <div class="absolute inset-0">
+      <Canvas :style="{ width: '100%', height: '100%' }" @loaded="onLoaded" />
+    </div>
     <slot />
     <div
       v-if="error"
