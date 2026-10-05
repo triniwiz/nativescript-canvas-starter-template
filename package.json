@@ -9,7 +9,7 @@
     "@nativescript/canvas-polyfill": "3.0.0-beta.3",
     "@nativescript/canvas-svg": "3.0.0-beta.3",
     "@nativescript/canvas-three": "3.0.0-beta.3",
-    "@nativescript/core": "https://pkg.pr.new/@nativescript/core@68ab1fa",
+    "@nativescript/core": "https://pkg.pr.new/@nativescript/core@6b21744",
     "@triniwiz/nativescript-masonkit": "^1.0.0-beta.107",
     "@valor/nativescript-websockets": "^2.0.2",
     "nativescript-vue": "3.1.2",
@@ -21,7 +21,7 @@
     "@nativescript/ios": "9.1.0",
     "@nativescript/tailwind": "~4.0.10",
     "@nativescript/types": "~9.1.1",
-    "@nativescript/vite": "https://pkg.pr.new/@nativescript/vite@68ab1fa",
+    "@nativescript/vite": "https://pkg.pr.new/@nativescript/vite@6b21744",
     "@nativescript/webpack": "~5.0.38",
     "@nativescript/windows": "^1.0.0-beta.8",
     "@types/node": "~26.5.0",
@@ -29,13 +29,12 @@
     "@vitejs/plugin-vue": "^6.0.9",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
     "nativescript": "9.1.2-dev.2026-10-04-37218525770",
-    "patch-package": "^8.0.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.11"
   },
   "overrides": {
-    "@nativescript/core": "https://pkg.pr.new/@nativescript/core@68ab1fa",
+    "@nativescript/core": "https://pkg.pr.new/@nativescript/core@6b21744",
     "@nativescript/canvas": "3.0.0-beta.3",
     "@nativescript/canvas-polyfill": "3.0.0-beta.3",
     "@nativescript/canvas-svg": "3.0.0-beta.3",
@@ -48,7 +47,6 @@
     "windows": "ns run windows",
     "ios": "ns run ios",
     "android": "ns run android",
-    "clean": "ns clean",
-    "postinstall": "patch-package"
+    "clean": "ns clean"
   }
 }
