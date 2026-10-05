@@ -10,6 +10,7 @@ import ThreeDemo from './demos/ThreeDemo.vue';
 import PixiDemo from './demos/PixiDemo.vue';
 import SvgDemo from './demos/SvgDemo.vue';
 import MixDemo from './demos/MixDemo.vue';
+import OffscreenDemo from './demos/OffscreenDemo.vue';
 import { flowField } from '../canvas/demos/flow-field';
 import { icons } from '../svg/art';
 
@@ -69,6 +70,13 @@ const demos = [
     tags: ['SMIL', 'Skia'],
     icon: icons.svg,
     page: SvgDemo,
+  },
+  {
+    title: 'Offscreen & Workers',
+    body: 'One scene drawn on the main thread and by a Worker that owns the canvas.',
+    tags: ['OffscreenCanvas', 'Worker'],
+    icon: icons.offscreen,
+    page: OffscreenDemo,
   },
   {
     title: 'Mix & match',

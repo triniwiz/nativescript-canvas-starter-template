@@ -192,6 +192,13 @@ export const icons = {
     '0 0 48 48',
     ICON_SIZE,
   ),
+  offscreen: svg(
+    `<rect x="4" y="4" width="40" height="40" rx="10" fill="#2563eb"/>
+     <rect x="11" y="12" width="17" height="13" rx="2.5" fill="none" stroke="#dbeafe" stroke-width="2.5"/>
+     <rect x="20" y="23" width="17" height="13" rx="2.5" fill="#dbeafe"/>`,
+    '0 0 48 48',
+    ICON_SIZE,
+  ),
   mix: svg(
     `<rect x="4" y="4" width="40" height="40" rx="10" fill="#d97706"/>
      <g fill="#fef3c7"><rect x="11" y="11" width="12" height="16" rx="3"/><rect x="25" y="11" width="12" height="8" rx="3"/>
