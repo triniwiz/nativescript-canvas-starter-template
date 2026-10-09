@@ -1,5 +1,5 @@
 import type { CanvasRenderingContext2D } from '@nativescript/canvas';
-import type { Demo } from '../runner';
+import type { Demo } from '../../canvas/runner';
 
 export interface ChartSeries {
   name: string;

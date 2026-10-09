@@ -1,5 +1,5 @@
 import type { WebGLProgram, WebGLRenderingContext, WebGLUniformLocation } from '@nativescript/canvas';
-import type { Demo, DemoInstance } from '../runner';
+import type { Demo, DemoInstance } from '../../canvas/runner';
 
 const HEADER = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH

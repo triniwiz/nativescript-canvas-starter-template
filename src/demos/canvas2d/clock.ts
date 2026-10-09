@@ -1,5 +1,5 @@
 import type { CanvasRenderingContext2D } from '@nativescript/canvas';
-import type { Demo } from '../runner';
+import type { Demo } from '../../canvas/runner';
 
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

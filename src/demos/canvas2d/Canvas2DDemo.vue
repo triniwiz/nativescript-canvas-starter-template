@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { ref, shallowRef, watch } from 'nativescript-vue';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import Segmented from '../Segmented.vue';
-import { flowField, type FlowField, type FlowPalette } from '../../canvas/demos/flow-field';
-import { clock } from '../../canvas/demos/clock';
-import { liveChart, type ChartSeries } from '../../canvas/demos/live-chart';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import Segmented from '../../components/Segmented.vue';
+import { flowField, type FlowField, type FlowPalette } from './flow-field';
+import { clock } from './clock';
+import { liveChart, type ChartSeries } from './live-chart';
 
 const palettes: { label: string; value: FlowPalette }[] = [
   { label: 'Aurora', value: 'aurora' },

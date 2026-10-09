@@ -4,7 +4,7 @@ import type { Canvas } from '@nativescript/canvas';
 import { runDemo, type Demo, type DemoInstance } from '../canvas/runner';
 
 /**
- * A <Canvas> that runs a demo from src/canvas/demos, filling the width it is
+ * A <Canvas> that runs a demo (see src/demos), filling the width it is
  * given. With `height` (dp) it is that tall; without, it fills the height its
  * box gets from classes (`flex-1`, `h-*`). The default slot is layered on top
  * of the canvas, so MasonKit content (badges, captions, controls) can sit over

@@ -2,17 +2,17 @@
 import { $navigateTo } from 'nativescript-vue';
 import { Device, Screen } from '@nativescript/core';
 import CanvasView from './CanvasView.vue';
-import Playground from './Playground.vue';
-import Canvas2DDemo from './demos/Canvas2DDemo.vue';
-import WebGLDemo from './demos/WebGLDemo.vue';
-import WebGPUDemo from './demos/WebGPUDemo.vue';
-import ThreeDemo from './demos/ThreeDemo.vue';
-import PixiDemo from './demos/PixiDemo.vue';
-import SvgDemo from './demos/SvgDemo.vue';
-import MixDemo from './demos/MixDemo.vue';
-import OffscreenDemo from './demos/OffscreenDemo.vue';
-import { flowField } from '../canvas/demos/flow-field';
-import { icons } from '../svg/art';
+import Playground from '../demos/playground/Playground.vue';
+import Canvas2DDemo from '../demos/canvas2d/Canvas2DDemo.vue';
+import WebGLDemo from '../demos/webgl/WebGLDemo.vue';
+import WebGPUDemo from '../demos/webgpu/WebGPUDemo.vue';
+import ThreeDemo from '../demos/three/ThreeDemo.vue';
+import PixiDemo from '../demos/pixi/PixiDemo.vue';
+import SvgDemo from '../demos/svg/SvgDemo.vue';
+import MixDemo from '../demos/mix/MixDemo.vue';
+import OffscreenDemo from '../demos/offscreen/OffscreenDemo.vue';
+import { flowField } from '../demos/canvas2d/flow-field';
+import { icons } from '../demos/svg/art';
 
 const platform = Device.os;
 const screen = `${Math.round(Screen.mainScreen.widthDIPs)} × ${Math.round(

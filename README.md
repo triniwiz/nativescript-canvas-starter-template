@@ -39,31 +39,31 @@ Use npm. `package.json` relies on npm `overrides`.
 
 ## Demos
 
-The home screen links to one page per renderer:
+The home screen links to one page per renderer. Each page has its own folder in
+`src/demos/`, holding the page (`*.vue`) and its drawing code (`*.ts`):
 
-| Page | What it shows |
-| --- | --- |
-| Canvas 2D | Flow-field particles, an analog clock and a live chart |
-| WebGL | GLSL fragment shaders |
-| WebGPU | A WGSL compute shader simulating boids |
-| three.js | PBR materials and an instanced galaxy |
-| PixiJS | Sprites on WebGL or WebGPU |
-| SVG | Animated SVG, and SVG generated from Vue state |
-| Offscreen & Workers | `OffscreenCanvas` sprites, and a canvas drawn by a Worker next to one drawn on the main thread |
-| Mix & match | All of the above in one Tailwind grid |
-| Layout playground | Flexbox and Grid with MasonKit |
+| Page | Folder | What it shows |
+| --- | --- | --- |
+| Canvas 2D | `canvas2d/` | Flow-field particles, an analog clock and a live chart |
+| WebGL | `webgl/` | GLSL fragment shaders |
+| WebGPU | `webgpu/` | A WGSL compute shader simulating boids |
+| three.js | `three/` | PBR materials and an instanced galaxy |
+| PixiJS | `pixi/` | Sprites on WebGL or WebGPU |
+| SVG | `svg/` | Animated SVG, and SVG generated from Vue state |
+| Offscreen & Workers | `offscreen/` | `OffscreenCanvas` sprites, and a canvas drawn by a Worker next to one drawn on the main thread |
+| Mix & match | `mix/` | All of the above in one Tailwind grid |
+| Layout playground | `playground/` | Flexbox and Grid with MasonKit |
 
 ## Project layout
 
 | Path | What it's for |
 | --- | --- |
 | `src/app.ts` | App entry. Loads the browser polyfills, registers MasonKit's elements, `<Canvas>` and `<Svg>`. |
-| `src/canvas/demos/` | The drawing code. It doesn't depend on Vue, so you can copy a demo into any app. |
+| `src/demos/<renderer>/` | One folder per demo page (see [Demos](#demos)). The `.ts` files are the drawing code. They don't depend on Vue, so you can copy one into any app. |
 | `src/canvas/runner.ts` | Runs a demo on a canvas: sizing, the `requestAnimationFrame` loop and pointer input. |
 | `src/canvas/worker-host.ts`, `src/canvas/worker-demo.ts` | Run a demo in a Worker: `runInWorker` hands a canvas over with `transferControlToOffscreen()`, and `serveDemo` draws into it on the Worker's side. |
-| `src/canvas/workers/` | Worker entry files, and the functions that create them. |
 | `src/components/CanvasView.vue` | `<Canvas>` wrapped for Vue. Anything in its slot is layered over the canvas. |
-| `src/svg/art.ts` | The SVG markup for the SVG demos. |
+| `src/components/` | Also the home screen and the pieces the demo pages share. |
 | `src/app.css` | Tailwind, plus the `dark:`, `ios:`, `android:`, `windows:`, `phone:` and `tablet:` variants. |
 | `postcss-masonkit.mjs` | Keeps the Tailwind layout utilities (`flex`, `grid`, `gap-*`, `max-w-*`, `absolute`, ...) that NativeScript's Tailwind plugin would otherwise remove. |
 

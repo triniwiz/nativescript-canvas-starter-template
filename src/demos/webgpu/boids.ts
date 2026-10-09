@@ -6,7 +6,7 @@ import {
   type GPUCanvasContext,
   type GPUDevice,
 } from '@nativescript/canvas';
-import type { Demo, DemoInstance } from '../runner';
+import type { Demo, DemoInstance } from '../../canvas/runner';
 
 // Adapted from the WebGPU samples' "Compute Boids"
 // (https://webgpu.github.io/webgpu-samples/?sample=computeBoids).

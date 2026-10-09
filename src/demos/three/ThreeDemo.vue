@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref, shallowRef, watch } from 'nativescript-vue';
 import { formatCount } from '../../format';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import Segmented from '../Segmented.vue';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import Segmented from '../../components/Segmented.vue';
 import {
   threeGalaxy,
   type GalaxyMaterial,
   type ThreeGalaxy,
   type ThreeStats,
-} from '../../canvas/demos/three-galaxy';
+} from './galaxy';
 
 const materials: { label: string; value: GalaxyMaterial }[] = [
   { label: 'Iridescent', value: 'glass' },

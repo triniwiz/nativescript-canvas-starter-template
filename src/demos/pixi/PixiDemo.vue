@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { computed, ref, shallowRef } from 'nativescript-vue';
 import { formatCount } from '../../format';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import Segmented from '../Segmented.vue';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import Segmented from '../../components/Segmented.vue';
 import {
   pixiCritters,
   type PixiBackend,
   type PixiCritters,
   type PixiStats,
-} from '../../canvas/demos/pixi-critters';
+} from './critters';
 
 // PixiJS picks its renderer at init, so switching mounts a fresh canvas.
 const backends: { label: string; value: PixiBackend }[] = [

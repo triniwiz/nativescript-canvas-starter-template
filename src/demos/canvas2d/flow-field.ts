@@ -1,5 +1,5 @@
 import type { CanvasRenderingContext2D } from '@nativescript/canvas';
-import type { Demo, DemoInstance } from '../runner';
+import type { Demo, DemoInstance } from '../../canvas/runner';
 
 /** Hue ranges (degrees) the particles pick their colour from. */
 export const flowPalettes = {

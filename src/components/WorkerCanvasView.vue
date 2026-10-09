@@ -5,7 +5,7 @@ import { runInWorker, type TransferMode } from '../canvas/worker-host';
 
 /**
  * CanvasView, drawn by a Worker: `worker` creates one whose entry file calls
- * `serveDemo` (see src/canvas/workers). Sizing and the slot work as in
+ * `serveDemo` (see src/demos/offscreen). Sizing and the slot work as in
  * CanvasView. The Worker ends when this component unmounts.
  */
 const props = defineProps<{ worker: () => Worker; height?: number }>();

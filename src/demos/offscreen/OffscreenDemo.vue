@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'nativescript-vue';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import WorkerCanvasView from '../WorkerCanvasView.vue';
-import { fireflies } from '../../canvas/demos/fireflies';
-import { createFirefliesWorker } from '../../canvas/workers';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import WorkerCanvasView from '../../components/WorkerCanvasView.vue';
+import { fireflies } from './fireflies';
+import { createFirefliesWorker } from './workers';
 import type { TransferMode } from '../../canvas/worker-host';
 
 const BLOCK_MS = 2000;

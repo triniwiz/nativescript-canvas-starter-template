@@ -1,6 +1,6 @@
 import * as THREE from '@nativescript/canvas-three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import type { Demo, DemoInstance } from '../runner';
+import type { Demo, DemoInstance } from '../../canvas/runner';
 
 export type GalaxyMaterial = 'glass' | 'chrome' | 'normals' | 'wireframe';
 
