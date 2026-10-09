@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { computed, ref, shallowRef, watch } from 'nativescript-vue';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import Segmented from '../Segmented.vue';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import Segmented from '../../components/Segmented.vue';
 import {
   shaderGallery,
   type GLInfo,
   type ShaderGallery,
   type ShaderName,
-} from '../../canvas/demos/shader-gallery';
+} from './shaders';
 
 const options: { label: string; value: ShaderName }[] = [
   { label: 'Plasma', value: 'plasma' },

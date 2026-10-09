@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { computed, ref, shallowRef, watch } from 'nativescript-vue';
 import { formatCount } from '../../format';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import Segmented from '../Segmented.vue';
-import { boids, type BoidPreset, type Boids, type GPUInfo } from '../../canvas/demos/boids';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import Segmented from '../../components/Segmented.vue';
+import { boids, type BoidPreset, type Boids, type GPUInfo } from './boids';
 
 const presets: { label: string; value: BoidPreset }[] = [
   { label: 'Flock', value: 'flock' },

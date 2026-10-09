@@ -1,6 +1,6 @@
 import '@nativescript/canvas-pixi';
 import { Application, Container, Graphics, Sprite, type Texture } from 'pixi.js';
-import type { Demo, DemoInstance } from '../runner';
+import type { Demo, DemoInstance } from '../../canvas/runner';
 
 export type PixiBackend = 'webgl' | 'webgpu';
 

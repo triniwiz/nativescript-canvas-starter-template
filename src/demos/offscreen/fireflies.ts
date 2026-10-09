@@ -2,7 +2,7 @@ import type {
   CanvasRenderingContext2D,
   OffscreenCanvas as OffscreenCanvasClass,
 } from '@nativescript/canvas';
-import type { DemoInstance, DemoSize } from '../runner';
+import type { DemoInstance, DemoSize } from '../../canvas/runner';
 
 // The global, so this file runs in a Worker too: @nativescript/canvas-polyfill
 // installs it on the main thread, and @nativescript/canvas/worker in a Worker.

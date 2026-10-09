@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { computed, reactive } from 'nativescript-vue';
-import DemoPage from '../DemoPage.vue';
-import CanvasView from '../CanvasView.vue';
-import { shaderGallery } from '../../canvas/demos/shader-gallery';
-import { liveChart, type ChartSeries } from '../../canvas/demos/live-chart';
-import { threeGalaxy } from '../../canvas/demos/three-galaxy';
-import { gauge, icons } from '../../svg/art';
+import DemoPage from '../../components/DemoPage.vue';
+import CanvasView from '../../components/CanvasView.vue';
+import { shaderGallery } from '../webgl/shaders';
+import { liveChart, type ChartSeries } from '../canvas2d/live-chart';
+import { threeGalaxy } from '../three/galaxy';
+import { gauge, icons } from '../svg/art';
 
 const hero = shaderGallery({ shader: 'aurora', timeScale: 0.5 });
 const preview = threeGalaxy({ cubes: 300, compact: true });

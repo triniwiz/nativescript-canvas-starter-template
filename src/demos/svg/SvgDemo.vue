@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, ref } from 'nativescript-vue';
-import DemoPage from '../DemoPage.vue';
-import { gallery, gauge } from '../../svg/art';
+import DemoPage from '../../components/DemoPage.vue';
+import { gallery, gauge } from './art';
 
 const value = ref(64);
 const gaugeSrc = computed(() => gauge(value.value, 'GPU budget'));
