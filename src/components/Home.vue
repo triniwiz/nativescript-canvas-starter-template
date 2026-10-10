@@ -12,7 +12,7 @@ import SvgDemo from '../demos/svg/SvgDemo.vue';
 import MixDemo from '../demos/mix/MixDemo.vue';
 import OffscreenDemo from '../demos/offscreen/OffscreenDemo.vue';
 import { flowField } from '../demos/canvas2d/flow-field';
-import { icons } from '../demos/svg/art';
+import { icons, vueLogo } from '../demos/svg/art';
 
 const platform = Device.os;
 const screen = `${Math.round(Screen.mainScreen.widthDIPs)} × ${Math.round(
@@ -21,6 +21,7 @@ const screen = `${Math.round(Screen.mainScreen.widthDIPs)} × ${Math.round(
 
 // The hero's background is a live Canvas 2D sketch.
 const heroDemo = flowField({ density: 0.6 });
+const logo = vueLogo(120);
 
 const stats = [
   { label: 'Running on', value: platform },
@@ -102,6 +103,9 @@ const demos = [
         <main class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-5 py-8">
           <!-- Hero: MasonKit content layered over a live canvas -->
           <CanvasView :demo="heroDemo" :height="400" class="w-full rounded-3xl">
+            <div class="absolute right-6 top-6">
+              <Svg :src="logo" class="size-[120]" />
+            </div>
             <section class="absolute inset-0 flex flex-col justify-end gap-4 p-8">
               <span
                 class="self-start rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white"
