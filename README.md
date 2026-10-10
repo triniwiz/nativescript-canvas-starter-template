@@ -99,9 +99,6 @@ The home screen links to one page per renderer. Each page has its own folder in
 
 ## Known issues on Windows
 
-- The PixiJS demo only runs on WebGL for now. On WebGPU it fails at startup
-  until [canvas#161](https://github.com/NativeScript/canvas/pull/161) is
-  released.
 - `Number.prototype.toLocaleString()` throws, so the demos format numbers
   with `formatCount` from `src/format.ts`.
 
