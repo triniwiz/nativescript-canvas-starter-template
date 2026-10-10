@@ -115,11 +115,8 @@ These can be removed once the fixes are released:
 - `@nativescript/core` and `@nativescript/vite` are installed through pkg.pr.new from
   [NativeScript/NativeScript#11468](https://github.com/NativeScript/NativeScript/pull/11468),
   which is the `feat/windows` branch plus percentage sizes inside MasonKit layouts.
-- `overrides` pins the `@nativescript/canvas*` packages to `3.0.0-alpha.16`
-  (`canvas-svg` to `3.0.0-alpha.15`, its latest). They depend on each other
-  with `"*"`, which doesn't match prereleases.
-- `@nativescript/windows` is pinned to an exact alpha, because a caret range
-  would also match older, incompatible betas.
+- `overrides` pins the `@nativescript/canvas*` packages to `3.0.0-beta.3`.
+  They depend on each other with `"*"`, which doesn't match prereleases.
 - `canvas-workarounds.mjs` makes the canvas package's `./platform` import
   resolve to `platform.js` rather than the `platform/` folder
   ([#11464](https://github.com/NativeScript/NativeScript/pull/11464)).
