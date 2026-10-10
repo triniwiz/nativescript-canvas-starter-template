@@ -150,6 +150,33 @@ export function gauge(value: number, label: string) {
 }
 
 /** Small glyphs for the home screen cards. */
+/** The Vue logo, pulsing, with rings rippling out from it. */
+export function vueLogo(size: number) {
+  const rings = [0, 1]
+    .map(
+      (i) => `
+  <circle cx="100" cy="104" r="52" fill="none" stroke="#41b883" stroke-width="2">
+    <animate attributeName="r" from="52" to="96" dur="3s" begin="${i * 1.5}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" from="0.7" to="0" dur="3s" begin="${i * 1.5}s" repeatCount="indefinite"/>
+  </circle>`,
+    )
+    .join('');
+  return svg(
+    `${rings}
+  <g transform="translate(100 104)">
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="1;1.08;1" keyTimes="0;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+      <g transform="scale(0.46) translate(-130.88 -113.35)">
+        <path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/>
+        <path d="M161.096.001l-30.225 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/>
+      </g>
+    </g>
+  </g>`,
+    '0 0 200 200',
+    size,
+  );
+}
+
 export const icons = {
   canvas2d: svg(
     `<rect x="4" y="4" width="40" height="40" rx="10" fill="#6366f1"/>
