@@ -14,18 +14,27 @@ const emit = defineEmits<{ started: [mode: TransferMode] }>();
 const error = ref<string | null>(null);
 let stop: (() => void) | null = null;
 
+function showError(reason: any) {
+  error.value = String(reason?.message ?? reason);
+}
+
 function onLoaded(args: { object: Canvas }) {
   if (stop) {
     return;
   }
-  stop = runInWorker(
-    args.object,
-    props.worker(),
-    (mode) => emit('started', mode),
-    (reason: any) => {
-      error.value = String(reason?.message ?? reason);
-    },
-  );
+  // `new Worker` throws if the runtime can't load the entry file. Left
+  // uncaught, that escapes into the page's navigation and leaves the Frame
+  // unable to go back.
+  let worker: Worker;
+  try {
+    worker = props.worker();
+  } catch (reason) {
+    console.error('[canvas worker]', reason);
+    showError(reason);
+    return;
+  }
+  error.value = null;
+  stop = runInWorker(args.object, worker, (mode) => emit('started', mode), showError);
 }
 
 onUnmounted(() => {

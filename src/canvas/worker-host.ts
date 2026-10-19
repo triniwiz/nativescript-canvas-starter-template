@@ -104,7 +104,10 @@ export function runInWorker(
   }
 
   worker.onmessage = (event: MessageEvent<WorkerMessage>) => {
-    if (event.data?.type === 'error') {
+    if (event.type === 'messageerror') {
+      // Windows reports a Worker that couldn't load here rather than to onerror.
+      fail((event as any).error ?? event);
+    } else if (event.data?.type === 'error') {
       fail(event.data.message);
     }
   };
