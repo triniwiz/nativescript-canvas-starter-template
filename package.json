@@ -23,7 +23,7 @@
     "@nativescript/types": "~9.1.1",
     "@nativescript/vite": "https://pkg.pr.new/@nativescript/vite@7be61a7",
     "@nativescript/webpack": "https://pkg.pr.new/@nativescript/webpack@7be61a7",
-    "@nativescript/windows": "^1.0.0-beta.11",
+    "@nativescript/windows": "^1.0.0-beta.12",
     "@types/node": "~26.5.0",
     "@types/three": "~0.184.0",
     "@vitejs/plugin-vue": "^6.0.9",
