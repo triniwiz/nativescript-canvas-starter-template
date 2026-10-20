@@ -117,8 +117,17 @@ export function threeGalaxy(
       camera.lookAt(0, 0, 0);
     }
 
+    // Compiles the shaders off the main thread where the context can
+    // (KHR_parallel_shader_compile); frames start once they're ready.
+    let ready = false;
+    const markReady = () => (ready = true);
+    renderer.compileAsync(scene, camera).then(markReady, markReady);
+
     return {
       frame(time, dt) {
+        if (!ready) {
+          return;
+        }
         const t = time / 1000;
         if (!dragging) {
           orbit.velocity *= 0.95;
