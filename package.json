@@ -10,7 +10,7 @@
     "@nativescript/canvas-svg": "3.0.0-beta.5",
     "@nativescript/canvas-three": "3.0.0-beta.5",
     "@nativescript/core": "https://pkg.pr.new/@nativescript/core@abae298",
-    "@triniwiz/nativescript-masonkit": "^1.0.0-beta.124",
+    "@triniwiz/nativescript-masonkit": "^1.0.0-beta.127",
     "@valor/nativescript-websockets": "^2.0.2",
     "nativescript-vue": "3.1.2",
     "pixi.js": "~8.5.2",
