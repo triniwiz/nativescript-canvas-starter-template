@@ -1,6 +1,24 @@
 import '@nativescript/canvas-pixi';
-import { Application, Container, Graphics, Sprite, type Texture } from 'pixi.js';
+import {
+  Application,
+  Container,
+  GlLimitsSystem,
+  GpuLimitsSystem,
+  Graphics,
+  Sprite,
+  type Texture,
+} from 'pixi.js';
 import type { Demo, DemoInstance } from '../../canvas/runner';
+
+// One batch size for WebGL and WebGPU: PixiJS shares batch shaders between them.
+const MAX_BATCH_TEXTURES = 16;
+for (const system of [GlLimitsSystem, GpuLimitsSystem]) {
+  const contextChange = system.prototype.contextChange;
+  system.prototype.contextChange = function (this: InstanceType<typeof system>, ...args: any[]) {
+    (contextChange as Function).apply(this, args);
+    this.maxBatchableTextures = Math.min(this.maxBatchableTextures, MAX_BATCH_TEXTURES);
+  };
+}
 
 export type PixiBackend = 'webgl' | 'webgpu';
 

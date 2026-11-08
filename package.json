@@ -13,7 +13,7 @@
     "@triniwiz/nativescript-masonkit": "^1.0.0-beta.130",
     "@valor/nativescript-websockets": "^2.0.2",
     "nativescript-vue": "3.1.2",
-    "pixi.js": "~8.5.2",
+    "pixi.js": "~8.22.0",
     "three": "0.184.0"
   },
   "devDependencies": {
@@ -42,7 +42,8 @@
     "@nativescript/canvas-three": "3.0.0",
     "@nativescript/canvas-pixi": "3.0.0",
     "@nativescript/canvas-media": "3.0.0",
-    "three": "0.184.0"
+    "three": "0.184.0",
+    "pixi.js@~8.5.2": "$pixi.js"
   },
   "scripts": {
     "windows": "ns run windows",

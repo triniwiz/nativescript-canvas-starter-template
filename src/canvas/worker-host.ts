@@ -136,6 +136,8 @@ export function runInWorker(
     canvas.removeEventListener('pointermove', onMove);
     canvas.removeEventListener('pointerup', onUp);
     canvas.removeEventListener('pointercancel', onUp);
+    worker.onmessage = null;
+    worker.onerror = null;
     worker.terminate();
   };
 }
