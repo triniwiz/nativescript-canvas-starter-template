@@ -9,7 +9,7 @@
 
 /*
  * NativeScript puts platform, device and appearance classes on the root view
- * (.ns-ios, .ns-android, .ns-windows, .ns-phone, .ns-tablet, .ns-dark, ...).
+ * (.ns-ios, .ns-android, .ns-windows, .ns-linux, .ns-phone, .ns-tablet, .ns-dark, ...).
  * These variants expose them to Tailwind: `dark:bg-slate-900`, `ios:pt-2`, ...
  *
  * `@media` based variants (sm:, md:, ...) are not available, so build
@@ -20,6 +20,7 @@
 @custom-variant ios (.ns-ios &);
 @custom-variant android (.ns-android &);
 @custom-variant windows (.ns-windows &);
+@custom-variant linux (.ns-linux &);
 @custom-variant phone (.ns-phone &);
 @custom-variant tablet (.ns-tablet &);
 

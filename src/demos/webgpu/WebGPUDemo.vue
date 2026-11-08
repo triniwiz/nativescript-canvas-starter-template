@@ -98,7 +98,7 @@ function onStarted(instance: Boids) {
         </div>
       </div>
       <p class="text-xs text-slate-500 dark:text-slate-400">
-        Powered by wgpu, which picks the native graphics API: Metal on iOS, Vulkan on Android (API 27+), Direct3D or Vulkan on Windows.
+        Powered by wgpu, which picks the native graphics API: Metal on iOS, Vulkan on Android (API 27+), Direct3D or Vulkan on Windows, Vulkan on Linux.
       </p>
     </section>
   </DemoPage>

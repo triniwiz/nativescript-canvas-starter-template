@@ -84,7 +84,7 @@ function getPlatform() {
     if (typeof env.platform === 'string') {
       return env.platform.toLowerCase();
     }
-    for (const platform of ['android', 'ios', 'visionos', 'windows']) {
+    for (const platform of ['android', 'ios', 'visionos', 'windows', 'linux']) {
       if (env[platform]) {
         return platform;
       }

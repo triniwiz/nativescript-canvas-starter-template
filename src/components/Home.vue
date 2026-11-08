@@ -115,7 +115,7 @@ const demos = [
               <h1 class="text-4xl font-bold text-white">Draw anything, natively.</h1>
               <p class="text-base text-white/80">
                 Canvas 2D, WebGL, WebGPU and SVG as native views, with three.js and
-                PixiJS on top, laid out with Tailwind on iOS, Android and Windows.
+                PixiJS on top, laid out with Tailwind on iOS, Android, Windows and Linux.
               </p>
               <div class="flex flex-row flex-wrap gap-3 pt-2">
                 <button
