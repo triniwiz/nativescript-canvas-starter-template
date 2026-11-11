@@ -127,21 +127,9 @@ These can be removed once the fixes are released:
   [NativeScript/NativeScript#11620](https://github.com/NativeScript/NativeScript/pull/11620),
   which is the `feat/linux` branch. It builds on `feat/windows`, which includes
   percentage sizes inside MasonKit layouts.
-- `overrides` pins the `@nativescript/canvas*` packages to `3.0.0`.
-  They depend on each other with `"*"`, which doesn't match prereleases.
+- `overrides` pins the `@nativescript/canvas*` packages to `3.0.4`, so their
+  `"*"` dependencies on each other resolve to the same release.
 - `@nativescript/linux` is pinned to an exact alpha.
-- `canvas-workarounds.mjs` makes the canvas package's `./platform` import
-  resolve to `platform.js` rather than the `platform/` folder
-  ([#11464](https://github.com/NativeScript/NativeScript/pull/11464)).
-  Its `threeAddons()` keeps three.js addons out of Vite's pre-bundling,
-  because HMR requests them at the wrong URL
-  ([#11466](https://github.com/NativeScript/NativeScript/pull/11466)). During
-  HMR it also points PixiJS's dynamic imports at its ES modules instead of its
-  CommonJS files, which would load a second copy of PixiJS.
-- `CanvasView` hands its canvas's `100%` size to MasonKit itself, because
-  canvas doesn't pass percentage sizes on yet
-  ([canvas#162](https://github.com/NativeScript/canvas/pull/162)).
-- `masonkit-hmr.mjs` stops MasonKit from loading twice during HMR.
-- `postcss-selector-commas.mjs` makes classes with a comma, like
-  `grid-cols-[repeat(auto-fill,minmax(240,1fr))]`, match
-  ([#11463](https://github.com/NativeScript/NativeScript/pull/11463)).
+- `canvas-workarounds.mjs` points PixiJS's dynamic imports at its ES modules
+  instead of its CommonJS files during HMR, which would load a second copy
+  of PixiJS.
