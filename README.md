@@ -23,8 +23,8 @@ To run on Linux you need the following.
 
 | Requirement | Notes |
 | --- | --- |
-| x64 Linux with glibc 2.34 or later | The runtime ships x64 binaries only. Ubuntu 22.04, Debian 12, Fedora 35 and later qualify. |
-| GTK 4 | The app's UI is GTK 4: `libgtk-4-1` on Debian and Ubuntu, `gtk4` on Fedora and Arch. |
+| x64 or arm64 Linux with glibc 2.28 or later | The runtime ships x64 and arm64 binaries. GTK 4 sets the practical minimum: Ubuntu 22.04, Debian 12, Fedora 34, RHEL 9 and later. |
+| GTK 4 | The app's UI is GTK 4 (GTK 3 isn't supported): `libgtk-4-1` on Debian and Ubuntu, `gtk4` on Fedora, RHEL and Arch. |
 | [Node.js](https://nodejs.org) LTS | Provides `npm` and `npx`. |
 
 For iOS and Android, follow the [NativeScript environment setup](https://docs.nativescript.org/setup/).
