@@ -19,7 +19,7 @@
   "devDependencies": {
     "@nativescript/android": "9.1.1",
     "@nativescript/ios": "9.1.0",
-    "@nativescript/linux": "0.1.0-alpha.7",
+   "@nativescript/linux": "0.1.0-alpha.8",
     "@nativescript/tailwind": "~4.0.10",
     "@nativescript/types": "~9.1.1",
     "@nativescript/vite": "https://pkg.pr.new/@nativescript/vite@6122649",
